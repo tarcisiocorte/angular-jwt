@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
-import {MatButtonModule, MatToolbarModule} from '@angular/material';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {MatButtonModule, MatToolbarModule, MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+
 
 import { AppComponent } from './app.component';
 import { ApiService } from "./api.services";
@@ -27,7 +29,9 @@ const routes = [
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatInputModule,
+    BrowserAnimationsModule
 
   ],
   providers: [ApiService],
