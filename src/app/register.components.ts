@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from "./api.services";
 
 @Component({
   selector: 'register',
@@ -15,7 +16,7 @@ import { Component } from '@angular/core';
               <input [(ngModel)]="registerData.email" name="email" matInput placeholder="email" type="email">
             </mat-input-container>
             <mat-input-container>
-              <input [(ngModel)]="registerData.password" name="password" matInput placeholder="password" type="password">
+              <input [(ngModel)]="registerData.pwd" name="pwd" matInput placeholder="password" type="password">
             </mat-input-container>        
             <button (click)="post()" mat-raised-button color="primary">Register</button>
           </form>
@@ -26,8 +27,11 @@ import { Component } from '@angular/core';
 export class RegisterComponent {
   registerData = {}
 
+  constructor(private apiService: ApiService){}
+
   post(){
-    console.log(this.registerData);    
+    console.log(this.registerData);
+    this.apiService.sendUserRegistration(this.registerData);    
   }
 
 }
