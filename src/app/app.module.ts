@@ -12,9 +12,11 @@ import { AppComponent } from './app.component';
 import { ApiService } from "./api.services";
 import { MessagesComponent } from "./messages.components";
 import { RegisterComponent } from './register.components';
+import { LoginComponent } from './login.component';
 
 const routes = [
-  {path: 'register', component: RegisterComponent }  
+  {path: 'register', component: RegisterComponent },  
+  {path: 'login', component: LoginComponent }  
 ]
 
 
@@ -22,7 +24,8 @@ const routes = [
   declarations: [
     AppComponent,
     MessagesComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

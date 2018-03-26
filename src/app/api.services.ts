@@ -24,4 +24,8 @@ export class ApiService{
         this.http.post('http://localhost:3000/register', registerData).subscribe(res => { 
         })
     }
+
+    loginUser(loginData){        
+        
+    }
 }
