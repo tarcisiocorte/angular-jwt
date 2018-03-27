@@ -10,9 +10,11 @@ import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { ApiService } from "./api.services";
+import { AuthService } from "./auth.service";
 import { MessagesComponent } from "./messages.components";
 import { RegisterComponent } from './register.components';
 import { LoginComponent } from './login.component';
+
 
 const routes = [
   {path: 'register', component: RegisterComponent },  
@@ -38,7 +40,7 @@ const routes = [
     MatInputModule,
     BrowserAnimationsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
