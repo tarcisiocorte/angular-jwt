@@ -1,29 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule } from "@angular/router";
-import { HttpModule } from "@angular/http";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {MatButtonModule, MatToolbarModule, MatInputModule} from '@angular/material';
-import { FormsModule } from "@angular/forms";
-import {MatCardModule} from '@angular/material/card';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { RouterModule } from '@angular/router'
+import { HttpModule } from '@angular/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatInputModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatFormFieldControl,
+  
+} from '@angular/material'
+import { FormsModule } from '@angular/forms'
 
-
-import { AppComponent } from './app.component';
-import { ApiService } from "./api.services";
-import { AuthService } from "./auth.service";
-import { MessagesComponent } from "./messages.components";
-import { RegisterComponent } from './register.components';
-import { LoginComponent } from './login.component';
-import { UserComponent } from './users.component';
+import { AppComponent } from './app.component'
+import { ApiService } from './api.services'
+import { AuthService } from './auth.service'
+import { MessagesComponent } from './messages.components'
+import { RegisterComponent } from './register.components'
+import { LoginComponent } from './login.component'
+import { UserComponent } from './users.component'
+import { ProfileComponent } from './profile.component'
 
 
 const routes = [
-  {path: 'register', component: RegisterComponent },  
-  {path: 'login', component: LoginComponent }, 
-  {path: 'users', component: UserComponent },
-  {path: 'profile/:id', component: UserComponent }    
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'users', component: UserComponent },
+  { path: 'profile/:id', component: ProfileComponent }
 ]
-
 
 @NgModule({
   declarations: [
@@ -31,7 +38,8 @@ const routes = [
     MessagesComponent,
     RegisterComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,10 @@ const routes = [
     MatToolbarModule,
     RouterModule.forRoot(routes),
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatFormFieldModule
   ],
   providers: [ApiService, AuthService],
   bootstrap: [AppComponent]
