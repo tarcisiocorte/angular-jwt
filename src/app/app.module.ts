@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { HttpModule } from '@angular/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 import {
   MatButtonModule,
   MatCardModule,
   MatToolbarModule,
   MatInputModule,
   MatListModule,
-  MatFormFieldModule,
   MatFormFieldControl,
   
 } from '@angular/material'
