@@ -6,21 +6,21 @@
     </mat-card-header>
     <mat-card-content>
         <form>
-            <mat-input-container>
-                <input [(ngModel)]="registerData.email" name="email" mdInput placeholder="email" type="email">
-            </mat-input-container>
-            <mat-input-container>
-                <input [(ngModel)]="registerData.pwd" name="password" mdInput placeholder="password" type="password">
-            </mat-input-container>
-            <br>
-            <mat-input-container>
-                <input [(ngModel)]="registerData.name" name="name" mdInput placeholder="name">
-            </mat-input-container>
-            <br>
-            <mat-input-container style="width: 100%">
-                <textarea [(ngModel)]="registerData.description" name="description" mdInput placeholder="description"></textarea>
-            </mat-input-container>
-            <br>
+            <mat-form-field>
+                    <input matInput [(ngModel)]="registerData.email" name="email" mdInput placeholder="email" type="email">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                    <input matInput [(ngModel)]="registerData.pwd" name="password" mdInput placeholder="password" type="password">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                    <input matInput [(ngModel)]="registerData.name" name="name" mdInput placeholder="name">
+            </mat-form-field>            
+            <br/>
+            <mat-form-field>
+                    <textarea matInput [(ngModel)]="registerData.description" name="description" mdInput placeholder="description"></textarea>
+            </mat-form-field>
             <button (click)="post()" mat-raised-button color="primary">Register</button>
         </form>
     </mat-card-content>
