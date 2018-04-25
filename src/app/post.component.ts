@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { ApiService } from './api.services'
+import { Component } from "@angular/core";
+import { ApiService } from "./api.services";
 
 @Component({
-    selector: 'post',
-    styleUrls: ['post.component.css'],
-    template: `<mat-card>
+  selector: "post",
+  styleUrls: ["post.component.css"],
+  template: `<mat-card>
     <mat-card-header>
         <mat-card-title>
             <h4>New Post</h4>
@@ -15,16 +15,16 @@ import { ApiService } from './api.services'
             <mat-form-field>
                     <textarea matInput [(ngModel)]="postMsg" name="description" mdInput placeholder="Post Message"></textarea>
             </mat-form-field>
-            <button (click)="post()" mat-raised-button color="primary">Register</button>
+            <button (click)="post()" mat-raised-button color="primary">Post</button>
         </form>
     </mat-card-content>
 </mat-card>`
 })
 export class PostComponent {
-    constructor(private apiService: ApiService) { }
-    postMsg = ''
+  constructor(private apiService: ApiService) {}
+  postMsg = "";
 
-    post() {
-        this.apiService.postMessage({msg: this.postMsg})
-    }
+  post() {
+    this.apiService.postMessage({ msg: this.postMsg });
+  }
 }

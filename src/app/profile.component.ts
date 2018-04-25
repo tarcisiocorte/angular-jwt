@@ -1,9 +1,9 @@
-import { Component } from '@angular/core'
-import { ApiService } from './api.services'
-import { ActivatedRoute } from '@angular/router'
+import { Component } from "@angular/core";
+import { ApiService } from "./api.services";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'login',
+  selector: "login",
   template: `
       <mat-card>
         <mat-card-header>
@@ -32,12 +32,12 @@ import { ActivatedRoute } from '@angular/router'
   `
 })
 export class ProfileComponent {
-    constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
-    profile
+  profile;
 
-    ngOnInit() {
-        var id = this.route.snapshot.params.id
-        this.apiService.getProfile(id).subscribe(data => this.profile = data.json())
-    }
+  ngOnInit() {
+    var id = this.route.snapshot.params.id;
+    this.apiService.getProfile(id).subscribe(data => (this.profile = data));
+  }
 }
